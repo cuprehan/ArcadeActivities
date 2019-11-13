@@ -55,10 +55,17 @@ class ada(arcade.Window):
     def __init__(self):
         """ Initialize variables """
         super().__init__("images/ada.png")
-        
+        self.timer = 0
+        self.center_x = WINDOW_WIDTH/2
+        self.center_y = WINDOW_HEIGHT/2
 
     def on_update(self, delta_time):
         """ Called every frame of the game (1/GAME_SPEED times per second)"""
+        self.timer = self.timer + (1/60)
+        if 1 <= self.timer % 2 < 2:
+            self.alpha = 255
+        else:
+            self.alpha = 0
 
 class potato(arcade.Window):
     def __init__(self):
