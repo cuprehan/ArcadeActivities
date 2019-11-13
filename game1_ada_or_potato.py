@@ -69,7 +69,7 @@ class potato(arcade.Sprite):
 
     def on_update(self):
         self.timer = self.timer + (1 / 60)
-        if 1 <= self.timer % 2 < 1:
+        if 0 <= self.timer % 2 < 1:
             self.alpha = 255
         else:
             self.alpha = 0
