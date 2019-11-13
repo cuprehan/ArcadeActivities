@@ -41,11 +41,21 @@ class Ada_Or_Potato(arcade.Window):
 
     def on_update(self, delta_time):
         """ Called every frame of the game (1/GAME_SPEED times per second)"""
+        self.logo_list.update()
+        self.timer = self.timer + (1/60)
+
+    def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
+        if 1 <= self.timer % 2 < 2:
+            self.score = self.score + 1
+        else:
+            self.score = self.score - 1
+
 
 class ada(arcade.Window):
     def __init__(self):
         """ Initialize variables """
-        super().__init__(WINDOW_WIDTH, WINDOW_HEIGHT, GAME_TITLE)
+        super().__init__("images/ada.png")
+        
 
     def on_update(self, delta_time):
         """ Called every frame of the game (1/GAME_SPEED times per second)"""
