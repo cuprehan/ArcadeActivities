@@ -31,7 +31,9 @@ class Ada_or_potato(arcade.Window):
         """ Setup the game (or reset the game) """
         arcade.set_background_color(BACKGROUND_COLOR)
         self.score = 0
-        self.sprites = arcade.SpriteList()
+        self.logo_list = arcade.SpriteList()
+        self.logo_list.append(ada())
+        self.logo_list.append(potato())
 
     def on_draw(self):
         """ Called when it is time to draw the world """
@@ -40,9 +42,24 @@ class Ada_or_potato(arcade.Window):
     def on_update(self, delta_time):
         """ Called every frame of the game (1/GAME_SPEED times per second)"""
 
+class ada(arcade.Window):
+    def __init__(self):
+        """ Initialize variables """
+        super().__init__(WINDOW_WIDTH, WINDOW_HEIGHT, GAME_TITLE)
+
+    def on_update(self, delta_time):
+        """ Called every frame of the game (1/GAME_SPEED times per second)"""
+
+class potato(arcade.Window):
+    def __init__(self):
+        """ Initialize variables """
+        super().__init__(WINDOW_WIDTH, WINDOW_HEIGHT, GAME_TITLE)
+
+    def on_update(self, delta_time):
+        """ Called every frame of the game (1/GAME_SPEED times per second)"""
 
 def main():
-    window = YourGameClassRenameThis()
+    window = Ada_or_potato()
     window.setup()
     arcade.run()
 
