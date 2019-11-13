@@ -9,14 +9,12 @@ GAME_SPEED = 1/60
 
 TIMER_MAXIMUM = 100
 
-ADA_IMAGE = arcade.load_texture("images/ada.png",scale = .5)
-POTATO_IMAGE = arcade.load_texture("images/potato.png", scale = .5)
+ADA_IMAGE = arcade.load_texture("images/ada.png", scale=.5)
+POTATO_IMAGE = arcade.load_texture("images/potato.png", scale=.5)
 
-class Ada_or_potato(arcade.Window):
+class Ada_Or_Potato(arcade.Window):
     sprites: arcade.SpriteList
     score: int
-
-
 
     def __init__(self):
         """ Initialize variables """
@@ -24,8 +22,6 @@ class Ada_or_potato(arcade.Window):
         self.logo_list = None
         self.score = 0
         self.timer = 0
-
-
 
     def setup(self):
         """ Setup the game (or reset the game) """
@@ -38,6 +34,10 @@ class Ada_or_potato(arcade.Window):
     def on_draw(self):
         """ Called when it is time to draw the world """
         arcade.start_render()
+        self.logo_list.draw()
+        score = self.score
+        score = str(score)
+        arcade.draw_text("Your score:" + score, 10, 20, arcade.color.WHITE, 14)
 
     def on_update(self, delta_time):
         """ Called every frame of the game (1/GAME_SPEED times per second)"""
@@ -59,7 +59,7 @@ class potato(arcade.Window):
         """ Called every frame of the game (1/GAME_SPEED times per second)"""
 
 def main():
-    window = Ada_or_potato()
+    window = Ada_Or_Potato()
     window.setup()
     arcade.run()
 
