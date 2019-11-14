@@ -1,5 +1,5 @@
 import arcade
-
+    
 # Define constants
 WINDOW_WIDTH = 500
 WINDOW_HEIGHT = 500
@@ -7,7 +7,6 @@ BACKGROUND_COLOR = arcade.color.BLACK
 GAME_TITLE = "Ada or Potato"
 GAME_SPEED = 1 / 60
 
-TIMER_MAXIMUM = 100
 
 ADA_IMAGE = arcade.load_texture("images/ada.png")
 POTATO_IMAGE = arcade.load_texture("images/potato.png")
