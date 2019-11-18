@@ -61,7 +61,7 @@ class ada(arcade.Sprite):
 
 class potato(arcade.Sprite):
     def __init__(self):
-        super().__init__("images/potato.png", scale=.5)
+        super().__init__("images/potato.png", scale=.25)
         self.timer = 0
         self.center_x = WINDOW_WIDTH / 2
         self.center_y = WINDOW_HEIGHT / 2
